@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,600;1,600&display=swap');
 
-
 /* Geral */
 
+/* Variáveis de cores */
 :root {
     --color_blue: #4270a1;
     --dark_blue: #0a335f;
@@ -23,15 +23,23 @@ body {
     box-sizing: border-box;
 }
 
+/* Estilização de links */
+.top_title a, .bottom_subtitle a, .top_container ul li a, footer .bottom_container ul a {
+    color: var(--color_white);
+}
+
+/* Estilização do Cabeçalho */
 .top_title a {
     font-weight: bold;
-    color: var(--color_white);
     font-size: 25px;
 }
 
 .bottom_subtitle a {
-    color: var(--color_white);
     font-size: 15px;
+}
+
+.top_container ul li :hover, footer .bottom_container ul li :hover {
+    color: var(--color_yellow);
 }
 
 .header_bgd {
@@ -54,7 +62,6 @@ nav {
     display: flex;
     align-items: center;
     list-style: none;
-    color: var(--color_white);
 }
 
 .top_container ul li {
@@ -62,51 +69,43 @@ nav {
     font-size: 15px;
 }
 
-.top_container ul li a {
-    color: var(--color_white);
-}
-
-.top_container ul li :hover {
-    color: var(--color_yellow);
-}
-
-.image_container img {
-    height: 100%;
+/* Imagens */
+.image_container img, .image_item img {
     width: 100%;
+    height: auto;
 }
-  
+
+.image_item img {
+    height: 400px;
+    scroll-snap-align: center;
+    border-radius: 8px;
+}
+
+/* Footer */
 footer {
     background-color: var(--color_blue);
     max-width: 1440px;
     padding: 3%;
     margin: 0 auto;
-    
 }
 
-footer .bottom_container{
+footer .bottom_container {
     justify-content: space-between;
     display: flex;
     color: var(--color_white);
 }
 
-footer .bottom_container ul{
+footer .bottom_container ul {
     list-style: none;
     width: 25%;
 }
 
-footer .bottom_container ul a{
-    color: var(--color_white);
-}
-
-footer .bottom_container h3{
+footer .bottom_container h3 {
     margin-bottom: 16px;
     font-weight: 600;
 }
 
-footer .bottom_container ul li :hover {
-    color: var(--color_yellow);
-}
-
+/* Títulos genéricos */
 .generic_title { 
     color: var(--dark_blue);
     background-color: var(--color_yellow); 
@@ -115,14 +114,16 @@ footer .bottom_container ul li :hover {
     padding-top: 4%; 
 }
 
-
 /* Sobre mim */
-
-.container_about_me{
+.container_about_me {
     background-color: var(--color_white);
     font-size: 25px;
     padding: 5%;
     color: var(--light_black);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
 }
 
 .image_about_me img {
@@ -130,106 +131,75 @@ footer .bottom_container ul li :hover {
     width: 300px;
     border-radius: 50%;
     border: 10px solid var(--color_yellow);
-}
-
-.container_about_me {
-    display: flex;
-    align-items: center; /* Alinha verticalmente os itens */
-    justify-content: space-between; /* Espaçamento entre os itens */
-    gap: 20px; /* Espaço entre a imagem e o texto */
-}
-
-.image_about_me {
-    flex-shrink: 0; /* Evita que a imagem seja reduzida */
+    flex-shrink: 0;
 }
 
 .text_about_me {
-    flex: 1; /* Faz o texto ocupar o espaço restante */
+    flex: 1;
 }
 
-
-
 /* Currículo */
-
 .curriculum_container {
     background-color: var(--color_yellow);
     display: flex;
-    justify-content: space-between; /* Espaço entre os contêineres */
+    justify-content: space-between;
     align-items: flex-start;
-    flex-wrap: wrap; /* Permite que o conteúdo quebre a linha se necessário */
-    gap: 24px; /* Espaçamento entre os contêineres */
+    flex-wrap: wrap;
+    gap: 24px;
     padding: 6%;
-
 }
 
 .academic_container, .languages_container, .skills_container {
-    flex: 1; /* Faz cada contêiner ocupar o mesmo espaço disponível */
-    min-width: 280px; /* Garante que cada contêiner tenha uma largura mínima */
-    max-width: 300px; /* Ajuste conforme necessário para controlar o tamanho máximo */
+    flex: 1;
+    min-width: 280px;
+    max-width: 300px;
 }
 
 .curriculum_container h2 {
     color: var(--dark_blue);
 }
 
-
-
 /* Portfolio */
-
 .scroller {
     padding: 2%;
     background-color: var(--color_yellow);
     text-align: center;
 }
 
-
 .app_title_icon {
     justify-content: center;
-    display: flex; /* Alinha o ícone e o texto lado a lado */
-    align-items: center; /* Centraliza verticalmente o ícone e o texto */
-    gap: 8px; /* Espaço entre o ícone e o texto */
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
 .icon {
-    height: 24px; /* Ajuste o tamanho do ícone */
-    width: 24px; /* Ajuste o tamanho do ícone */
+    height: 24px;
+    width: 24px;
     border-radius: 8px;
 }
 
 .image_scroller {
-    color: var(--light_black);
     justify-content: center;
     align-items: center;
-    display: flex; /* Alinha as imagens horizontalmente */
-    overflow-x: auto; /* Permite rolagem horizontal */
-    scroll-snap-type: x mandatory; /* Faz as imagens "encaixarem" ao serem roladas */
-    gap: 16px; /* Espaço entre as imagens */
-    padding: 20px 0; /* Espaçamento entre o início/fim e as imagens */
-    margin-bottom: 24px; /* Espaço vertical entre os scrollers */
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 16px;
+    padding: 20px 0;
+    margin-bottom: 24px;
 }
-
-.image_item img {
-    height: 400px; /* Ajuste o tamanho das imagens */
-    width: auto;
-    scroll-snap-align: center; /* Faz a imagem "encaixar" ao parar de rolar */
-    border-radius: 8px; /* Se necessário, para bordas arredondadas */
-}
-
-
 
 /* Contato */
 
 .form_container {
-    padding-top: 5%;
-    padding-bottom: 5%;
+    padding: 5% 0;
     background-color: var(--color_yellow);
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 100%;
 }
-
 
 .form_box {
     display: flex;
@@ -237,26 +207,25 @@ footer .bottom_container ul li :hover {
     border-radius: 8px;
     background-color: var(--color_white);
     width: 700px;
-
 }
 
+/* Estilização do título dentro da caixa de formulário */
 .form_box h2 {
     padding: 24px 32px;
     font-size: 24px;
 }
 
-.form_box form{
+.form_box form {
     display: flex;
-    align-items: start;
     flex-wrap: wrap;
     padding: 24px;
     gap: 16px;
-
 }
 
+/* Estilização dos campos de input e textarea */
 .form_box input,
 .form_box textarea {
-    width: (calc(50% - 8px));
+    width: calc(50% - 8px);
     height: 48px;
     border-radius: 8px;
     border: thin solid gray;
@@ -264,23 +233,19 @@ footer .bottom_container ul li :hover {
     font-size: 16px;
 }
 
-.form_box input:first-child{
-    margin-right: 16px;
-}
-
-.form_box input[name=subject]{
+.form_box input[name=subject],
+.form_box textarea {
     width: 100%;
 }
 
 .form_box textarea {
-    width: 100%;
     height: 180px;
     padding: 8px 16px;
 }
+
+/* Estilização do botão do formulário */
+
 .form_box button {
-    display: block;
-    border: none;
-    outline: none;
     margin-top: 24px;
     width: 180px;
     height: 48px;
@@ -290,8 +255,9 @@ footer .bottom_container ul li :hover {
     font-size: 16px;
     font-weight: bold;
     cursor: pointer;
-
+    border: none;
 }
+
 .form_box button:hover {
     background-color: var(--color_yellow);
 }
