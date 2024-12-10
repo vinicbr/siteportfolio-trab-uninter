@@ -1,0 +1,297 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,600;1,600&display=swap');
+
+
+/* Geral */
+
+:root {
+    --color_blue: #4270a1;
+    --dark_blue: #0a335f;
+    --color_yellow: #fdb313;
+    --color_white: #f8f8ff;
+    --light_black: #191919;
+}
+
+body {
+    font-family: 'Mulish', sans-serif;
+    background-color: var(--color_blue);
+}
+
+* {
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.top_title a {
+    font-weight: bold;
+    color: var(--color_white);
+    font-size: 25px;
+}
+
+.bottom_subtitle a {
+    color: var(--color_white);
+    font-size: 15px;
+}
+
+.header_bgd {
+    background-color: var(--bgd_color);
+}
+
+.top_container {
+    max-width: 1440px;
+    padding: 3%;
+    margin: 0 auto;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.top_container ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    color: var(--color_white);
+}
+
+.top_container ul li {
+    margin: 0 35px;
+    font-size: 15px;
+}
+
+.top_container ul li a {
+    color: var(--color_white);
+}
+
+.top_container ul li :hover {
+    color: var(--color_yellow);
+}
+
+.image_container img {
+    height: 100%;
+    width: 100%;
+}
+  
+footer {
+    background-color: var(--color_blue);
+    max-width: 1440px;
+    padding: 3%;
+    margin: 0 auto;
+    
+}
+
+footer .bottom_container{
+    justify-content: space-between;
+    display: flex;
+    color: var(--color_white);
+}
+
+footer .bottom_container ul{
+    list-style: none;
+    width: 25%;
+}
+
+footer .bottom_container ul a{
+    color: var(--color_white);
+}
+
+footer .bottom_container h3{
+    margin-bottom: 16px;
+    font-weight: 600;
+}
+
+footer .bottom_container ul li :hover {
+    color: var(--color_yellow);
+}
+
+.generic_title { 
+    color: var(--dark_blue);
+    background-color: var(--color_yellow); 
+    text-align: center; 
+    font-size: 24px; 
+    padding-top: 4%; 
+}
+
+
+/* Sobre mim */
+
+.container_about_me{
+    background-color: var(--color_white);
+    font-size: 25px;
+    padding: 5%;
+    color: var(--light_black);
+}
+
+.image_about_me img {
+    height: 300px;
+    width: 300px;
+    border-radius: 50%;
+    border: 10px solid var(--color_yellow);
+}
+
+.container_about_me {
+    display: flex;
+    align-items: center; /* Alinha verticalmente os itens */
+    justify-content: space-between; /* Espaçamento entre os itens */
+    gap: 20px; /* Espaço entre a imagem e o texto */
+}
+
+.image_about_me {
+    flex-shrink: 0; /* Evita que a imagem seja reduzida */
+}
+
+.text_about_me {
+    flex: 1; /* Faz o texto ocupar o espaço restante */
+}
+
+
+
+/* Currículo */
+
+.curriculum_container {
+    background-color: var(--color_yellow);
+    display: flex;
+    justify-content: space-between; /* Espaço entre os contêineres */
+    align-items: flex-start;
+    flex-wrap: wrap; /* Permite que o conteúdo quebre a linha se necessário */
+    gap: 24px; /* Espaçamento entre os contêineres */
+    padding: 6%;
+
+}
+
+.academic_container, .languages_container, .skills_container {
+    flex: 1; /* Faz cada contêiner ocupar o mesmo espaço disponível */
+    min-width: 280px; /* Garante que cada contêiner tenha uma largura mínima */
+    max-width: 300px; /* Ajuste conforme necessário para controlar o tamanho máximo */
+}
+
+.curriculum_container h2 {
+    color: var(--dark_blue);
+}
+
+
+
+/* Portfolio */
+
+.scroller {
+    padding: 2%;
+    background-color: var(--color_yellow);
+    text-align: center;
+}
+
+
+.app_title_icon {
+    justify-content: center;
+    display: flex; /* Alinha o ícone e o texto lado a lado */
+    align-items: center; /* Centraliza verticalmente o ícone e o texto */
+    gap: 8px; /* Espaço entre o ícone e o texto */
+}
+
+.icon {
+    height: 24px; /* Ajuste o tamanho do ícone */
+    width: 24px; /* Ajuste o tamanho do ícone */
+    border-radius: 8px;
+}
+
+.image_scroller {
+    color: var(--light_black);
+    justify-content: center;
+    align-items: center;
+    display: flex; /* Alinha as imagens horizontalmente */
+    overflow-x: auto; /* Permite rolagem horizontal */
+    scroll-snap-type: x mandatory; /* Faz as imagens "encaixarem" ao serem roladas */
+    gap: 16px; /* Espaço entre as imagens */
+    padding: 20px 0; /* Espaçamento entre o início/fim e as imagens */
+    margin-bottom: 24px; /* Espaço vertical entre os scrollers */
+}
+
+.image_item img {
+    height: 400px; /* Ajuste o tamanho das imagens */
+    width: auto;
+    scroll-snap-align: center; /* Faz a imagem "encaixar" ao parar de rolar */
+    border-radius: 8px; /* Se necessário, para bordas arredondadas */
+}
+
+
+
+/* Contato */
+
+.form_container {
+    padding-top: 5%;
+    padding-bottom: 5%;
+    background-color: var(--color_yellow);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+
+.form_box {
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    background-color: var(--color_white);
+    width: 700px;
+
+}
+
+.form_box h2 {
+    padding: 24px 32px;
+    font-size: 24px;
+}
+
+.form_box form{
+    display: flex;
+    align-items: start;
+    flex-wrap: wrap;
+    padding: 24px;
+    gap: 16px;
+
+}
+
+.form_box input,
+.form_box textarea {
+    width: (calc(50% - 8px));
+    height: 48px;
+    border-radius: 8px;
+    border: thin solid gray;
+    padding-left: 16px;
+    font-size: 16px;
+}
+
+.form_box input:first-child{
+    margin-right: 16px;
+}
+
+.form_box input[name=subject]{
+    width: 100%;
+}
+
+.form_box textarea {
+    width: 100%;
+    height: 180px;
+    padding: 8px 16px;
+}
+.form_box button {
+    display: block;
+    border: none;
+    outline: none;
+    margin-top: 24px;
+    width: 180px;
+    height: 48px;
+    border-radius: 8px;
+    background-color: var(--color_blue);
+    color: var(--color_white);
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+
+}
+.form_box button:hover {
+    background-color: var(--color_yellow);
+}

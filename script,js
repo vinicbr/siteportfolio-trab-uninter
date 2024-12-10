@@ -1,0 +1,12 @@
+console.log("Script carregado!");
+
+// Captura o botão pelo ID
+const button = document.getElementById("button_contact");
+console.log(button);
+
+// Adiciona o evento de clique
+button.addEventListener("click", function (event) {
+    event.preventDefault(); // Evita o envio padrão do formulário
+    alert("Contato feito com sucesso!");
+});
+
